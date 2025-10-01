@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자야구</title>
+
+    <link rel="stylesheet" href="css/number-baseball.css">
+  </head>
+
+  <body>
+    <!-- 상단 설정 패널 -->
+    <div id="settings-panel" class="settings-panel">
+      <h3>게임 설정</h3>
+      <div class="settings-row">
+        <div class="setting-item">
+          <label for="max-attempts">기회 횟수</label>
+          <input type="number" id="max-attempts" min="1" max="999" value="10">
+          <label class="checkbox-label">
+            <input type="checkbox" id="unlimited-attempts"> 무한
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <label for="number-length">숫자 길이</label>
+          <input type="number" id="number-length" min="2" max="10" value="4">
+        </div>
+
+        <div class="setting-item">
+          <label class="checkbox-label">
+            <input type="checkbox" id="allow-duplicates"> 중복 허용
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <label for="time-limit">시간 제한(초)</label>
+          <input type="number" id="time-limit" min="10" max="999" value="60" disabled>
+          <label class="checkbox-label">
+            <input type="checkbox" id="unlimited-time" checked> 무제한
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <button id="apply-settings" class="apply-btn">설정 적용</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <h1>숫자야구 게임</h1>
+      <div class="instruction">
+        4자리 숫자를 맞춰보세요! (중복 없음, 1-9 숫자만 사용)
+      </div>
+
+      <div class="attempts-counter" id="attempts-counter">
+        <span class="attempts-text">남은 기회:</span>
+        <span class="attempts-number" id="attempts-number">10</span>
+      </div>
+
+      <form id="form">
+        <input type="text" id="input" placeholder="4자리 숫자 입력" maxlength="4">
+        <button>확인</button>
+      </form>
+      <div id="logs"></div>
+    </div>
+
+    <script src="js/number-baseball.js"></script>
+  </body>
+</html>
